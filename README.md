@@ -1,4 +1,4 @@
-CIFAR-10 Image Classification Using Convolutional Neural Networks (CNN)
+#CIFAR-10 Image Classification Using Convolutional Neural Networks (CNN)
 Overview
 
 This project implements an image classification system using a Convolutional Neural Network (CNN) on the CIFAR-10 dataset.

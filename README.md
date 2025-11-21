@@ -11,8 +11,8 @@ The task was to:
 
 The model achieves:
 
-- **Training Accuracy:** 99.85%  
-- **Testing Accuracy:** 98.00%
+- **Training Accuracy:** 99.84%  
+- **Testing Accuracy:** 98.72%
 
 Simple normalization was used. No augmentation techniques were applied.
 
@@ -77,7 +77,7 @@ This architecture is ideal for MNIST due to its simplicity and high performance.
 
 | Model | Training Accuracy | Testing Accuracy | Notes |
 |-------|------------------|------------------|-------|
-| CNN (This Work) | **99.85%** | **98.00%** | Simple CNN, normalized pixels |
+| CNN (This Work) | **99.84%%** | **98.72%** | Simple CNN, normalized pixels |
 
 Plots for accuracy, loss, and the confusion matrix are available in the `results/` folder.
 
@@ -96,4 +96,3 @@ All outputs are saved inside the **results/** directory.
 
 ---
 
-## 📁 Repository Structure

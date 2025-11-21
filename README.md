@@ -1,76 +1,99 @@
-# CIFAR-10 Image Classification Using Convolutional Neural Networks (CNN)
+# MNIST Digit Classification Using Convolutional Neural Networks (CNN)
 
-## Overview
-This project implements an image classification model using a **Convolutional Neural Network (CNN)** on the **CIFAR-10 dataset** as part of **Assignment-1**.  
-The objective is to select a dataset from Google Dataset Search and apply any machine-learning algorithm covered in class.
+## 📌 Overview
+This project implements a Convolutional Neural Network (CNN) model for classifying handwritten digits from the MNIST dataset as part of **Assignment-1**.
 
-The CNN model achieves:
+The task was to:
+- Select a dataset from Google Dataset Search  
+- Apply any ML/DL algorithm covered in class  
+- Implement using Python  
+- Provide code, README, and a report  
 
-- **Training Accuracy:** 95%  
-- **Testing Accuracy:** 96%
+The model achieves:
 
-No normalization or data augmentation was used. The model was trained directly on raw pixel values.
+- **Training Accuracy:** 99.85%  
+- **Testing Accuracy:** 98.00%
+
+Simple normalization was used. No augmentation techniques were applied.
 
 ---
 
-## Dataset
+## 📊 Dataset
 
-**Name:** CIFAR-10  
+**Name:** MNIST – Handwritten Digit Dataset  
 **Source:** Google Dataset Search / Keras Datasets  
 
-**Details:**
-- 60,000 images (32×32 RGB)
-- 10 classes: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck
-- 50,000 training images
-- 10,000 testing images
-
-**Preprocessing:**
-- Raw pixel values (0–255)  
-- No normalization  
-- No augmentation  
-
----
-
-## Abstract
-The CIFAR-10 dataset is widely used as a benchmark for evaluating image classification models.  
-This project builds a CNN from scratch using Python to classify the dataset’s 10 image categories.  
-Despite training on raw image pixel values without normalization or augmentation, the model achieves **96% test accuracy**, demonstrating strong performance and effective feature learning.
-
----
-
-## Methodology
+### Dataset Details
+- 70,000 grayscale images  
+- Image size: **28×28**  
+- 10 classes: digits **0–9**  
+- 60,000 training images  
+- 10,000 test images  
 
 ### Preprocessing
-- Loaded dataset using Keras  
-- Used raw 0–255 pixel values  
-- One-hot encoded labels  
-- No scaling  
-- No augmentation  
+- Pixel values normalized **0–255 → 0–1**
+- Reshaped to **(28, 28, 1)**  
+- Labels kept in integer form → sparse classification  
 
-### CNN Architecture
-- Convolutional layers with ReLU activation  
-- MaxPooling layers  
-- Flatten layer  
-- Dense layers  
-- Softmax output layer (10 classes)
+---
 
-### Training
-- **Optimizer:** Adam  
-- **Loss:** Categorical Cross-Entropy  
+## 📝 Abstract
+The MNIST dataset is a widely used benchmark for image classification.  
+This project builds a CNN using Python and TensorFlow/Keras to classify handwritten digits.
+
+Despite the model’s simplicity and minimal preprocessing, it achieves excellent performance with **98% test accuracy**, showing strong feature extraction by the CNN.
+
+---
+
+## ⚙️ Methodology
+
+### 1️⃣ Preprocessing
+- Loaded dataset from Keras  
+- Normalized pixel values to `[0, 1]`  
+- Added channel dimension  
+- Used sparse labels  
+
+### 2️⃣ CNN Architecture
+The CNN contains the following layers:
+
+- `Conv2D(32 filters, 3×3, ReLU)`
+- `MaxPooling2D(2×2)`
+- `Flatten()`
+- `Dense(100, ReLU)`
+- `Dense(10, Softmax)`
+
+This architecture is ideal for MNIST due to its simplicity and high performance.
+
+### 3️⃣ Training
+- **Optimizer:** SGD (momentum=0.9)  
+- **Loss:** Sparse Categorical Cross-Entropy  
 - **Batch Size:** 32  
-- **Epochs:** 20 (or configured)  
+- **Epochs:** 10  
 - **Metric:** Accuracy  
 
 ---
 
-## Results
+## ✅ Results
 
 | Model | Training Accuracy | Testing Accuracy | Notes |
-|-------|-------------------|------------------|-------|
-| CNN (This Work) | 95% | 96% | No normalization, no augmentation |
+|-------|------------------|------------------|-------|
+| CNN (This Work) | **99.85%** | **98.00%** | Simple CNN, normalized pixels |
 
-Screenshots of training curves and predictions can be found in the `results/` folder.
+Plots for accuracy, loss, and the confusion matrix are available in the `results/` folder.
 
 ---
 
-## Repository Structure
+## 📷 Output Visualizations
+The project includes:
+
+- Training Accuracy Curve  
+- Training Loss Curve  
+- Confusion Matrix  
+- Classification Report  
+- Sample Predictions  
+
+All outputs are saved inside the **results/** directory.
+
+---
+
+## 📁 Repository Structure
